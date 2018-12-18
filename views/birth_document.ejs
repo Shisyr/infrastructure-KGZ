@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+      label {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+      <% if(data) { %>
+        <% for(let i = 0;i < data.length;i++){ %>
+          <label>First Name: </label>
+            <%= data[i].firstName %>
+            <br>
+          <label>Last Name:</label>
+          <%= data[i].lastName %>
+          <br>
+          <label>Father Name:</label>
+          <%= data[i].fatherName %>
+          <br>
+          <label>Birthday:</label>
+          <%= data[i].birthDay %>
+          <br>
+          <label>Gender:</label>
+          <%= data[i].gender %>
+          <br>
+          <label>Personal Number:</label>
+          <%= data[i].personalNumber %>
+          <br>
+          <label>Pin:</label>
+          <%= data[i].pin %>
+          <br>
+          <label>Nationality:</label>
+          <%= data[i].nationality %>
+          <br>
+          <label>Type:</label>
+          <%= data[i].type %>
+          <br>
+        <% } %>
+      <% } else {%>
+        <form action="/birth_document" method="post">
+          <label>First Name: </label>
+          <input type="text" name="firstName">
+          <br>
+          <label>Last Name: </label>
+          <input type="text" name="lastName">
+          <br>
+          <input type="submit">
+          <br>
+        </form>
+
+      <% } %>
+  </body>
+</html>

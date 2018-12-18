@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <style type="text/css">
+      label {
+        color: red;
+      }
+      .output {
+        color: blue;
+      }
+      .output-line {
+        color: black;
+      }
+      .form-group {
+        width: 40%;
+        margin-left: 50px;
+        margin-top: 10px;
+      }
+      .full-form {
+        border: 5px solid;
+        border-radius: 13px;
+        margin-right: 500px;
+        margin-top: 30px;
+        margin-left: 30px;
+        color: grey;
+      }
+      .form-control {
+        border: 3px solid #ced4da;
+      }
+      .label-output {
+        color: rgb(223, 16, 4);
+        font-size: 17px;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <% if(data) { %>
+        <% data.forEach((res) => { %>
+            <%= JSON.stringify(res); %>
+            <hr>
+        <% }); %>
+    <% } else {%>
+      <form class="full-form" action="/medical_card" method="POST">
+        <div class="form-group">
+          <label class="label-output">Select</label>
+          <select class="form-control" type="text" name="type">
+          <option>Address</option>
+          <option>History_diseases_medical_card</option>
+          <option>Allergy_History</option>
+          <option>Allergy_Type</option>
+          <option>Disease Type</option>
+          <option>Duty Suitability</option>
+          <option>History Of Disease Instance</option>
+          <option>History of inspection</option>
+          <option>History_allergy_medical_card</option>
+          <option>History_vaccination_medical_card</option>
+          <option>Medical_Card</option>
+          <option>Military Inspection</option>
+          <option>Name of Vaccine</option>
+          <option>Pregnancy Inspections</option>
+          <option>Vaccination History</option>
+          </select>
+          <br>
+        </div>
+        <div class="form-group">
+          <input class="btn btn-primary" type="submit">
+        </div>
+      </form>
+    <% } %>
+  </body>
+</html>
